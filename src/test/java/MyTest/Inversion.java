@@ -9,13 +9,9 @@ public class Inversion {
         System.out.print(var1.charAt(i));
         }
     }
-    public int plus (int a ,int b)
-    {
-        return a+b;
-    }
     @Test
     private void ScreenCheck(){
-        System.out.print(plus(99,3243));
+        outInversionStr("shalom");
         //inversionStr("shalom");
     }
 
