@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class TestYaEbal {
     FunctionFact functionFact = new FunctionFact();
-    Ylibki ylibki = new Ylibki();
+    Inversion ylibki = new Inversion();
     Split split1 = new Split();
 
     @Test
