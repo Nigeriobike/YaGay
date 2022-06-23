@@ -15,7 +15,5 @@ public class TestYaEbal {
         Assert.assertTrue(functionFact.fact(2)==2);
         Assert.assertTrue(functionFact.fact(3)==6);
         Assert.assertTrue(functionFact.fact(4)==24);
-
-        
     }
 }
