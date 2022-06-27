@@ -16,6 +16,7 @@ public class FunctionFact {
         }
         return n;
     }
+
     @Test
     void outScreen()
     {

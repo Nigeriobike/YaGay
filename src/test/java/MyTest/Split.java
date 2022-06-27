@@ -15,4 +15,13 @@ public class Split {
    private void check (){
     outSplitWordBy("znatov1881@gmail.com","\\.");
     }
+    @Test
+    void var () {
+        int n = 0;
+        while (n < 100){
+            System.out.println(n);
+            n++;
+        }
+    }
 }
+

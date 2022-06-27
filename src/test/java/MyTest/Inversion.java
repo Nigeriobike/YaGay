@@ -14,6 +14,11 @@ public class Inversion {
         outInversionStr("shalom");
         //inversionStr("shalom");
     }
+    Split split1 = new Split();
+    void n()
+    {
+        split1.var();
+    }
 
 
 }
