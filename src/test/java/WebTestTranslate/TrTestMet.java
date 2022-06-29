@@ -1,38 +1,65 @@
 package WebTestTranslate;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.security.Key;
 
-public class TrTestMet {
+public class TrTestMet  {
+    WebDriver driver;
+    TrClases r1;
+    @BeforeTest
+    void setupTest()
+    {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        r1 = new TrClases(driver);
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+    }
 
     void startTestT(String lg , String txt)
     {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
-
         driver.get("https://translate.google.com/");
-        driver.findElement(By.xpath("(//*[@aria-label=\"Другие языки перевода\"])[1]")).click();
-        driver.findElement(By.xpath("(//c-wiz/div[2]/div/div[2]/input)[1]")).sendKeys(lg);
-        driver.findElement(By.xpath("(//c-wiz/div[2]/div/div[2]/input)[1]")).sendKeys(Keys.RETURN);
-        driver.findElement(By.xpath("//*[@aria-label=\"Исходный текст\"]")).sendKeys(txt);
-        //driver.findElement(By.xpath("//*[@aria-label=\"Исходный текст\"]")).sendKeys(Keys.RETURN);
-        //driver.findElement(By.xpath("//*[@aria-label=\"Исходный текст\"]")).
-        //returnKey("//*[@aria-label=\"Исходный текст\"]");
-
-
+        r1.driverFindClick("(//*[@jsname='zumM6d'])[1]");
+        driverFindSendKeysReturn("(//*[@jsname=\"oA4zhb\"])[2]",lg);
+        driver.findElement(By.xpath("//textarea")).sendKeys(txt);
+    }
+    @Test
+    void check ()
+    {
+        startTestT("укр","must be caught or declared to be thrown");
     }
     void returnKey(String s)
     {
-        //driver.findElement(By.xpath(s)).sendKeys(Keys.RETURN);
+        driver.findElement(By.xpath(s)).sendKeys(Keys.RETURN);
     }
+    void driverFindClick (String s){
+        driver.findElement(By.xpath(s)).click();
+    }
+    void driverFindSendKeys(String path , String txt)
+    {
+        driver.findElement(By.xpath(path)).sendKeys(txt);
+    }
+    void driverFindSendKeysReturn(String path , String txt)
+    {
+        driver.findElement(By.xpath(path)).sendKeys(txt);
+        driver.findElement(By.xpath(path)).sendKeys(Keys.RETURN);
+    }
+    void sleep(int s)
+    {
+        try {
+            Thread.sleep(s*1000);
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }

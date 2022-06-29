@@ -1,8 +1,13 @@
 package WebTestTranslate;
 
-public class TrTestMain {
-    public static void main(String[] args) {
-        TrTestMet trTestMet = new TrTestMet();
-        trTestMet.startTestT("укр","cat say miay");
+import org.testng.annotations.Test;
+
+public class TrTestMain extends  TrTestMet{
+   // static TrTestMet trTestMet = new TrTestMet();
+
+    @Test
+    public void main(String[] args) {
+        setupTest();
+        startTestT("укр","must be caught or declared to be thrown");
     }
 }
