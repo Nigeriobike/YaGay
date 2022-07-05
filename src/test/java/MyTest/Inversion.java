@@ -8,6 +8,7 @@ public class Inversion {
         {
         System.out.print(var1.charAt(i));
         }
+
     }
     @Test
     private void ScreenCheck(){
