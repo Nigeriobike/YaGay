@@ -1,0 +1,6 @@
+ //if
+ if(getElByXpath(sortBtn).isEnabled()){
+            System.out.println("yes");
+        }else {
+            System.out.println("no");
+        }
