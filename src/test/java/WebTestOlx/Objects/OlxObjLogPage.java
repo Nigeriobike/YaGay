@@ -10,6 +10,7 @@ public class OlxObjLogPage extends BasePage {
     private String userMailLog = "(//*[@id=\"userEmail\"])[1]";
     private String passMailLog = "(//*[@id=\"userPass\"])[1]";
     private String logBtn = "(//*[@class=\"login-button login-button--submit\"])[1]";
+    private  String cookies = "//button[@class=\"cookie-close abs cookiesBarClose\"]";
     //gets
     public WebElement getUserMailLog() {
         return getElByXpath(userMailLog);
@@ -19,5 +20,8 @@ public class OlxObjLogPage extends BasePage {
     }
     public WebElement getLogBtn() {
         return getElByXpath(logBtn);
+    }
+    public WebElement getCookies() {
+        return getElByXpath(cookies);
     }
 }

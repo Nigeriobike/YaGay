@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 public class OlxObjSearchPage extends BasePage{
     //cons
     public OlxObjSearchPage(WebDriver driver){super(driver);}
-    //
+    //elements
     protected String sortBtn = "//*[@data-testid=\"sorting-icon\"]";
     protected String categoriBtn ="//*[contains(text(),'Любая категория')]";
 

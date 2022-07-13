@@ -7,6 +7,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -18,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestInit {
     WebDriver driver;
+    Actions action ;
     private String website = "https://www.olx.ua/";
     void goToOlx()
     {
@@ -25,11 +28,13 @@ public class TestInit {
     }
 
 
+
     @BeforeMethod
     void setupTest()
     {
         WebDriverManager.chromiumdriver().setup();
         driver = new ChromeDriver();
+        action =new Actions(driver);
         ChromeOptions chromeOptions = new ChromeOptions();
         driver.manage().window().maximize();
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
@@ -45,10 +50,10 @@ public class TestInit {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
     }
     //
-  // @AfterMethod
+   @AfterMethod
     void tearDown()
     {
-        driver.quit();
+        //driver.quit();
     }
 
     //

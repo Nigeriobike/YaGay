@@ -5,6 +5,7 @@ import WebTestOlx.Objects.OlxObjLogPageHelper;
 import WebTestOlx.Objects.OlxObjSearchPage;
 import WebTestOlx.Objects.OlxObjSearchPageHelper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 
@@ -18,7 +19,8 @@ public class TestHomePage extends TestInit {
         logPageC().loginIn();
         goToOlx();
         homePageC().searchClick("pixel 5");
-        String a1 = searchPageC().getAtrebuteText(7);
+        searchPageC().favourClick(15);
+        String a1 = searchPageC().getAtrebuteText(10);
         System.out.println(a1);
 
         /*olxObjHomePageHelper.searchClick("pixel 5");
