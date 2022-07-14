@@ -8,8 +8,7 @@ public class OlxObjSearchPage extends BasePage{
     public OlxObjSearchPage(WebDriver driver){super(driver);}
     //elements
     protected String sortBtn = "//*[@data-testid=\"sorting-icon\"]";
-    protected String categoriBtn ="//*[contains(text(),'Любая категория')]";
-
+    protected String categoriBtn ="//*[@class=\"css-1qvyz1h\"] ";
     protected String favourAdd ="//*[@data-testid=\"adAddToFavorites\"]";
     protected String advertisement = "//*[@data-cy=\"l-card\"]";
 

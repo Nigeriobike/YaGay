@@ -21,10 +21,13 @@ public class OlxObjSearchPageHelper extends OlxObjSearchPage {
         getFavour(a).click();
     }
     public String getAtrebuteText(int a){
+        scrollToEl(getAdvertisement(a));
         return getAdvertisement(a).getAttribute(text);
     }
     public String getHref(int a){
+        scrollToEl(getAdvertisement(a));
         return getAdvertisement(a).getAttribute(href);
     }
+
 
 }

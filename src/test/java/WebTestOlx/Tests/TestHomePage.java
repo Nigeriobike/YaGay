@@ -20,7 +20,7 @@ public class TestHomePage extends TestInit {
         goToOlx();
         homePageC().searchClick("pixel 5");
         searchPageC().favourClick(15);
-        String a1 = searchPageC().getAtrebuteText(10);
+        String a1 = searchPageC().getAtrebuteText(15);
         System.out.println(a1);
 
         /*olxObjHomePageHelper.searchClick("pixel 5");

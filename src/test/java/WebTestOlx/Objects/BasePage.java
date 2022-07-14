@@ -32,8 +32,7 @@ public class BasePage {
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(element))));
     }
     protected void scrollToEl(WebElement s){
-        Actions a1 = new Actions(driver);
-        a1.scrollToElement(s);
+        actions = new Actions(driver).scrollToElement(s);
     }
 
 }
