@@ -1,6 +1,7 @@
 package WebTestOlx.Objects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,8 +18,8 @@ public class BasePage {
     //cons
     public BasePage(WebDriver driver){this.driver=driver;}
     //attributes
-    protected String text = "\"outerText\"";
-    protected String href = "\"href\"";
+    protected String text = "innerText";
+    protected String href = "href";
     protected WebElement getElByXpath(String xpath) {
         return (new WebDriverWait(driver, timeToWait)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath))));
@@ -31,8 +32,8 @@ public class BasePage {
        return ( new WebDriverWait(driver, timeToWait)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(element))));
     }
-    protected void scrollToEl(WebElement s){
-        actions = new Actions(driver).scrollToElement(s);
+    public void scrollToEl(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",element);
     }
 
 }

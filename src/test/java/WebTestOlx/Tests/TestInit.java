@@ -34,7 +34,6 @@ public class TestInit {
     {
         WebDriverManager.chromiumdriver().setup();
         driver = new ChromeDriver();
-        action =new Actions(driver);
         ChromeOptions chromeOptions = new ChromeOptions();
         driver.manage().window().maximize();
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);

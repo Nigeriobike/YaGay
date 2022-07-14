@@ -10,8 +10,10 @@ public class OlxObjSearchPage extends BasePage{
     protected String sortBtn = "//*[@data-testid=\"sorting-icon\"]";
     protected String categoriBtn ="//*[@class=\"css-1qvyz1h\"] ";
     protected String favourAdd ="//*[@data-testid=\"adAddToFavorites\"]";
-    protected String advertisement = "//*[@data-cy=\"l-card\"]";
-
+    protected String favourRemove = "//*[@data-testid=\"adRemoveFromFavorites\"]";
+    protected String advertisementType1 = "//*[@data-cy=\"l-card\"]";
+    protected String advertisementType2 = "//*[@class=\"offer-wrapper\"]";
+    protected String adrevtismentNoLike = "//*[@data-testid='adAddToFavorites']/../../../../..";
     //page
     public WebElement getSort(){
         return getElByXpath(sortBtn);
@@ -22,13 +24,22 @@ public class OlxObjSearchPage extends BasePage{
     }
     //advertisements
     public int getAdvertisementsCount() {
-        return getElsByXpath(advertisement).size();
+        return getElsByXpath(advertisementType1).size();
+    }
+    public int getAdvertisementNotLikeCount() {
+        return getElsByXpath(adrevtismentNoLike).size();
+    }
+    public int getFavourCount(){
+        return getElsByXpath(favourRemove).size();
     }
     public WebElement getAdvertisement(int a) {
-        return getElsByXpath(advertisement).get(a-1);
+        return getElsByXpath(advertisementType1).get(a);
+    }
+    public WebElement getAdvertisementNotLike(int a) {
+        return getElsByXpath(adrevtismentNoLike).get(a);
     }
     public WebElement getFavour(int a){
-        return getElsByXpath(favourAdd).get(a-1);
+        return getElsByXpath(favourAdd).get(a);
     }
 
 }
