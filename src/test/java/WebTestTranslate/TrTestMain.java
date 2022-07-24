@@ -8,6 +8,6 @@ public class TrTestMain extends  TrTestMet{
     @Test
     public void main(String[] args) {
         setupTest();
-        startTestT("укр","must be caught or declared to be thrown");
+        startTestT("eng","приведствие");
     }
 }

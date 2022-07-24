@@ -1,5 +1,6 @@
 package WebTestOlx.Objects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -33,22 +34,20 @@ public class OlxObjSearchPageHelper extends OlxObjSearchPage {
         scrollToEl(getAdvertisement(a));
         return getAdvertisement(a).getAttribute(href);
     }
-    /*public String isLikeEnabled(int i){
-        return "(//*[@data-cy=\"l-card\"])["+i+"]//*[contains(@data-testid,\"adAddToFavorites\")]";
-    }*/
     public WebElement isLikeEnabled(int i){
         return getElByXpath("(//*[@data-cy=\"l-card\"])["+i+"]//*[contains(@data-testid,\"adAddToFavorites\")]");
     }
-
-    public void likeAndCheck(){
+    public void checkAndlike(String result){
         for (int i=1; i<getAdvertisementNotLikeCount();i++)
         {
-            //scrollToEl(getAdvertisementNotLike(i));
-            if(getNotLikeAttributeText(i).contains("Pixel 5 ")){
+            if(getNotLikeAttributeText(i).contains(result)){
                 getFavour(i).click();
-                //count++;
             }
         }
+    }
+    public void changeToNextPage()
+    {
+            getNextPage().click();
     }
     public void enableCheck(){
         for (int i=1; i<getAdvertisementsCount();i++)
@@ -58,5 +57,11 @@ public class OlxObjSearchPageHelper extends OlxObjSearchPage {
                 System.out.println(getAttributeText(i));
             }
         }
+    }
+    public void setRange(String a,String b){
+        getRangeFrom().sendKeys(a);
+        getRangeTo().sendKeys(b);
+        getRangeTo().sendKeys(Keys.RETURN);
+        sleep(3);
     }
 }

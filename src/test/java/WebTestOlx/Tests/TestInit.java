@@ -2,6 +2,7 @@ package WebTestOlx.Tests;
 
 import WebTestOlx.Objects.OlxObjHomePageHelper;
 import WebTestOlx.Objects.OlxObjLogPageHelper;
+import WebTestOlx.Objects.OlxObjMyAddPageHelper;
 import WebTestOlx.Objects.OlxObjSearchPageHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
@@ -74,6 +75,9 @@ public class TestInit {
     }
     protected OlxObjSearchPageHelper searchPageC(){
         return new OlxObjSearchPageHelper(driver);
+    }
+    protected OlxObjMyAddPageHelper myAddPageC(){
+        return new OlxObjMyAddPageHelper(driver);
     }
 
 }

@@ -32,7 +32,7 @@ public class TrTestMet  {
     @Test
     void check ()
     {
-        startTestT("укр","must be caught or declared to be thrown");
+        startTestT("eng","приведствие");
     }
     void returnKey(String s)
     {

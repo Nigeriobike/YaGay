@@ -10,7 +10,7 @@ public class OlxObjLogPageHelper extends OlxObjLogPage{
     public void loginIn() {
         if(getCookies().isDisplayed()){getCookies().click();}
         getUserMailLog().sendKeys("znatov1881@gmail.com");
-        getPassMailLog().sendKeys("OlxPass1234554321");
+        getPassMailLog().sendKeys("OlxPass12345");
         getPassMailLog().sendKeys(Keys.RETURN);
     }
 }
